@@ -9,7 +9,6 @@ class AppState: ObservableObject {
     @AppStorage("userEmail") var userEmail: String = ""
     @AppStorage("isDemoAccount") var isDemoAccount: Bool = false
 
-    @Published var isShowingSplash: Bool = true
     @Published var showDeleteAccountAlert: Bool = false
 
     var colorScheme: ColorScheme? {
@@ -21,11 +20,6 @@ class AppState: ObservableObject {
     }
 
     init() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.8) {
-            withAnimation {
-                self.isShowingSplash = false
-            }
-        }
     }
 
     func loginAsDemo() {

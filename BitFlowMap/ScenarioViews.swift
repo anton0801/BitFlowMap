@@ -105,6 +105,28 @@ struct ScenarioListView: View {
     }
 }
 
+
+struct OfflineView: View {
+    var body: some View {
+        GeometryReader { geometry in
+            ZStack {
+                Color.black.ignoresSafeArea()
+                
+                Image("bbp")
+                    .resizable().scaledToFill()
+                    .frame(width: geometry.size.width, height: geometry.size.height)
+                    .ignoresSafeArea()
+                    .blur(radius: 10)
+                    .opacity(0.6)
+                
+                Image("bbpp")
+                    .resizable()
+                    .frame(width: 250, height: 220)
+            }
+        }
+        .ignoresSafeArea()
+    }
+}
 struct FilterChip: View {
     let label: String
     let isSelected: Bool

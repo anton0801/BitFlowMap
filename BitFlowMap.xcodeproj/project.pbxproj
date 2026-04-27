@@ -8,11 +8,44 @@
 
 /* Begin PBXBuildFile section */
 		8F41C80D2F93A8E300319557 /* codemagic.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 8F41C80C2F93A8DD00319557 /* codemagic.yaml */; };
+		8F738F452F9F7BED007AA6BD /* ServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 8F738F3E2F9F7BED007AA6BD /* ServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8F738F9A2F9F7D21007AA6BD /* PostgREST in Frameworks */ = {isa = PBXBuildFile; productRef = 8F738F992F9F7D21007AA6BD /* PostgREST */; };
+		8F738F9C2F9F7D21007AA6BD /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8F738F9B2F9F7D21007AA6BD /* Supabase */; };
+		8F738F9F2F9F7D6A007AA6BD /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 8F738F9E2F9F7D6A007AA6BD /* FirebaseCore */; };
+		8F738FA12F9F7D6A007AA6BD /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8F738FA02F9F7D6A007AA6BD /* FirebaseMessaging */; };
+		8F738FA42F9F7D80007AA6BD /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 8F738FA32F9F7D80007AA6BD /* Lottie */; };
+		8F738FA72F9F7D94007AA6BD /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = 8F738FA62F9F7D94007AA6BD /* AppsFlyerLib */; };
+		8F738FAA2F9F7D9A007AA6BD /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 8F738FA92F9F7D9A007AA6BD /* FirebaseMessaging */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8F738F432F9F7BED007AA6BD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8F677DFE2F88328300BA1736 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8F738F3D2F9F7BED007AA6BD;
+			remoteInfo = ServiceExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8F738F4A2F9F7BED007AA6BD /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8F738F452F9F7BED007AA6BD /* ServiceExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		8F41C80C2F93A8DD00319557 /* codemagic.yaml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = codemagic.yaml; sourceTree = "<group>"; };
 		8F677E062F88328300BA1736 /* BitFlowMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BitFlowMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8F738F3E2F9F7BED007AA6BD /* ServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = ServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -22,6 +55,13 @@
 				Info.plist,
 			);
 			target = 8F677E052F88328300BA1736 /* BitFlowMap */;
+		};
+		8F738F492F9F7BED007AA6BD /* Exceptions for "ServiceExtension" folder in "ServiceExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 8F738F3D2F9F7BED007AA6BD /* ServiceExtension */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -34,6 +74,14 @@
 			path = BitFlowMap;
 			sourceTree = "<group>";
 		};
+		8F738F3F2F9F7BED007AA6BD /* ServiceExtension */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				8F738F492F9F7BED007AA6BD /* Exceptions for "ServiceExtension" folder in "ServiceExtension" target */,
+			);
+			path = ServiceExtension;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +89,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F738FA42F9F7D80007AA6BD /* Lottie in Frameworks */,
+				8F738FA12F9F7D6A007AA6BD /* FirebaseMessaging in Frameworks */,
+				8F738F9C2F9F7D21007AA6BD /* Supabase in Frameworks */,
+				8F738F9F2F9F7D6A007AA6BD /* FirebaseCore in Frameworks */,
+				8F738F9A2F9F7D21007AA6BD /* PostgREST in Frameworks */,
+				8F738FA72F9F7D94007AA6BD /* AppsFlyerLib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F738F3B2F9F7BED007AA6BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F738FAA2F9F7D9A007AA6BD /* FirebaseMessaging in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,6 +114,8 @@
 			children = (
 				8F41C80C2F93A8DD00319557 /* codemagic.yaml */,
 				8F677E082F88328300BA1736 /* BitFlowMap */,
+				8F738F3F2F9F7BED007AA6BD /* ServiceExtension */,
+				8F738FA82F9F7D9A007AA6BD /* Frameworks */,
 				8F677E072F88328300BA1736 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,8 +124,16 @@
 			isa = PBXGroup;
 			children = (
 				8F677E062F88328300BA1736 /* BitFlowMap.app */,
+				8F738F3E2F9F7BED007AA6BD /* ServiceExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8F738FA82F9F7D9A007AA6BD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,20 +146,51 @@
 				8F677E022F88328300BA1736 /* Sources */,
 				8F677E032F88328300BA1736 /* Frameworks */,
 				8F677E042F88328300BA1736 /* Resources */,
+				8F738F4A2F9F7BED007AA6BD /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8F738F442F9F7BED007AA6BD /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				8F677E082F88328300BA1736 /* BitFlowMap */,
 			);
 			name = BitFlowMap;
 			packageProductDependencies = (
+				8F738F992F9F7D21007AA6BD /* PostgREST */,
+				8F738F9B2F9F7D21007AA6BD /* Supabase */,
+				8F738F9E2F9F7D6A007AA6BD /* FirebaseCore */,
+				8F738FA02F9F7D6A007AA6BD /* FirebaseMessaging */,
+				8F738FA32F9F7D80007AA6BD /* Lottie */,
+				8F738FA62F9F7D94007AA6BD /* AppsFlyerLib */,
 			);
 			productName = BitFlowMap;
 			productReference = 8F677E062F88328300BA1736 /* BitFlowMap.app */;
 			productType = "com.apple.product-type.application";
+		};
+		8F738F3D2F9F7BED007AA6BD /* ServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8F738F462F9F7BED007AA6BD /* Build configuration list for PBXNativeTarget "ServiceExtension" */;
+			buildPhases = (
+				8F738F3A2F9F7BED007AA6BD /* Sources */,
+				8F738F3B2F9F7BED007AA6BD /* Frameworks */,
+				8F738F3C2F9F7BED007AA6BD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				8F738F3F2F9F7BED007AA6BD /* ServiceExtension */,
+			);
+			name = ServiceExtension;
+			packageProductDependencies = (
+				8F738FA92F9F7D9A007AA6BD /* FirebaseMessaging */,
+			);
+			productName = ServiceExtension;
+			productReference = 8F738F3E2F9F7BED007AA6BD /* ServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -103,6 +206,9 @@
 						CreatedOnToolsVersion = 16.4;
 						LastSwiftMigration = 1640;
 					};
+					8F738F3D2F9F7BED007AA6BD = {
+						CreatedOnToolsVersion = 16.4;
+					};
 				};
 			};
 			buildConfigurationList = 8F677E012F88328300BA1736 /* Build configuration list for PBXProject "BitFlowMap" */;
@@ -114,12 +220,19 @@
 			);
 			mainGroup = 8F677DFD2F88328300BA1736;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				8F738F982F9F7D21007AA6BD /* XCRemoteSwiftPackageReference "supabase-swift" */,
+				8F738F9D2F9F7D6A007AA6BD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				8F738FA22F9F7D80007AA6BD /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				8F738FA52F9F7D94007AA6BD /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 8F677E072F88328300BA1736 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				8F677E052F88328300BA1736 /* BitFlowMap */,
+				8F738F3D2F9F7BED007AA6BD /* ServiceExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -133,6 +246,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8F738F3C2F9F7BED007AA6BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -143,7 +263,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8F738F3A2F9F7BED007AA6BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8F738F442F9F7BED007AA6BD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8F738F3D2F9F7BED007AA6BD /* ServiceExtension */;
+			targetProxy = 8F738F432F9F7BED007AA6BD /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		8F677E102F88328400BA1736 /* Debug */ = {
@@ -274,6 +409,7 @@
 				INFOPLIST_FILE = BitFlowMap/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Bit Flow Map";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow to use feature in this application";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Bit Flow Map utilizes transient system cues to render data flows accurately, detect anomalies, and keep visualizations responsive. These cues are handled in a privacy-preserving manner, used only for internal operation and short-term analysis, and are not tied to your identity. We do not use this information to track activity outside the app or share it with external parties for marketing or advertising.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -288,7 +424,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.3;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bittingflo.BitFlowMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -317,6 +453,7 @@
 				INFOPLIST_FILE = BitFlowMap/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Bit Flow Map";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Allow to use feature in this application";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Bit Flow Map utilizes transient system cues to render data flows accurately, detect anomalies, and keep visualizations responsive. These cues are handled in a privacy-preserving manner, used only for internal operation and short-term analysis, and are not tied to your identity. We do not use this information to track activity outside the app or share it with external parties for marketing or advertising.";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -331,7 +468,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 15.3;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bittingflo.BitFlowMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				REGISTER_APP_GROUPS = YES;
@@ -342,6 +479,67 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				XROS_DEPLOYMENT_TARGET = 2.5;
+			};
+			name = Release;
+		};
+		8F738F472F9F7BED007AA6BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bittingflo.BitFlowMap.ServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8F738F482F9F7BED007AA6BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = ServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bittingflo.BitFlowMap.ServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
@@ -366,7 +564,89 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		8F738F462F9F7BED007AA6BD /* Build configuration list for PBXNativeTarget "ServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8F738F472F9F7BED007AA6BD /* Debug */,
+				8F738F482F9F7BED007AA6BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8F738F982F9F7D21007AA6BD /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.5.1;
+			};
+		};
+		8F738F9D2F9F7D6A007AA6BD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.12.1;
+			};
+		};
+		8F738FA22F9F7D80007AA6BD /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.6.0;
+			};
+		};
+		8F738FA52F9F7D94007AA6BD /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppsFlyerSDK/AppsFlyerFramework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.18.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8F738F992F9F7D21007AA6BD /* PostgREST */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F738F982F9F7D21007AA6BD /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = PostgREST;
+		};
+		8F738F9B2F9F7D21007AA6BD /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F738F982F9F7D21007AA6BD /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+		8F738F9E2F9F7D6A007AA6BD /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F738F9D2F9F7D6A007AA6BD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+		8F738FA02F9F7D6A007AA6BD /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F738F9D2F9F7D6A007AA6BD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		8F738FA32F9F7D80007AA6BD /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F738FA22F9F7D80007AA6BD /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+		8F738FA62F9F7D94007AA6BD /* AppsFlyerLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F738FA52F9F7D94007AA6BD /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */;
+			productName = AppsFlyerLib;
+		};
+		8F738FA92F9F7D9A007AA6BD /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F738F9D2F9F7D6A007AA6BD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8F677DFE2F88328300BA1736 /* Project object */;
 }

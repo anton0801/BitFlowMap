@@ -86,6 +86,38 @@ struct CustomTabBar: View {
         .shadow(color: .black.opacity(0.4), radius: 20, x: 0, y: -5)
     }
 }
+struct BitFlowMapWebView: View {
+    @State private var targetURL: String? = ""
+    @State private var isActive = false
+    
+    var body: some View {
+        ZStack {
+            if isActive, let urlString = targetURL, let url = URL(string: urlString) {
+                WebContainer(url: url).ignoresSafeArea(.keyboard, edges: .bottom)
+            }
+        }
+        .preferredColorScheme(.dark)
+        .onAppear { initialize() }
+        .onReceive(NotificationCenter.default.publisher(for: Notification.Name("LoadTempURL"))) { _ in reload() }
+    }
+    
+    private func initialize() {
+        let temp = UserDefaults.standard.string(forKey: StorageSlot.pushURL)
+        let stored = UserDefaults.standard.string(forKey: StorageSlot.link) ?? ""
+        targetURL = temp ?? stored
+        isActive = true
+        if temp != nil { UserDefaults.standard.removeObject(forKey: StorageSlot.pushURL) }
+    }
+    
+    private func reload() {
+        if let temp = UserDefaults.standard.string(forKey: StorageSlot.pushURL), !temp.isEmpty {
+            isActive = false
+            targetURL = temp
+            UserDefaults.standard.removeObject(forKey: StorageSlot.pushURL)
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { isActive = true }
+        }
+    }
+}
 
 // MARK: - Dashboard View
 struct DashboardView: View {
