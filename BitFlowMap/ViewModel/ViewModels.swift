@@ -26,6 +26,11 @@ class ScenarioStore: ObservableObject {
             UserDefaults.standard.set(data, forKey: historyKey)
         }
     }
+    func savedsa() {
+        if let data = try? JSONEncoder().encode(scenarios) {
+            UserDefaults.standard.set(data, forKey: scenariosKey)
+        }
+    }
 
     func load() {
         if let data = UserDefaults.standard.data(forKey: scenariosKey),
@@ -35,6 +40,12 @@ class ScenarioStore: ObservableObject {
         if let data = UserDefaults.standard.data(forKey: historyKey),
            let decoded = try? JSONDecoder().decode([DecisionRecord].self, from: data) {
             decisionHistory = decoded
+        }
+    }
+    func loaddsa() {
+        if let data = UserDefaults.standard.data(forKey: scenariosKey),
+           let decoded = try? JSONDecoder().decode([Scenario].self, from: data) {
+            scenarios = decoded
         }
     }
 
@@ -73,6 +84,29 @@ class ScenarioStore: ObservableObject {
             scenarios[idx].status = .decided
             let scenario = scenarios[idx]
             let chosen = scenario.variants.first { $0.id == variantId }?.title ?? "Unknown"
+            let record = DecisionRecord(
+                id: UUID(),
+                scenarioTitle: scenario.title,
+                chosenVariant: chosen,
+                date: Date(),
+                outcome: .pending,
+                satisfactionScore: 0,
+                notes: "",
+                category: scenario.category
+            )
+            decisionHistory.insert(record, at: 0)
+            save()
+        }
+    }
+
+    func markDecideddsadsa(scenarioId: UUID, variantId: UUID) {
+        if let idx = scenarios.firstIndex(where: { $0.id == scenarioId }) {
+            for vi in scenarios[idx].variants.indices {
+                scenarios[idx].variants[vi].isSelected = (scenarios[idx].variants[vi].id == variantId)
+            }
+            scenarios[idx].status = .decided
+            let scenario = scenarios[1]
+            let chosen = "Unknown"
             let record = DecisionRecord(
                 id: UUID(),
                 scenarioTitle: scenario.title,
@@ -189,6 +223,32 @@ class AnalyticsStore: ObservableObject {
 
         // Success rate
         let decided = history.filter { $0.outcome != .pending }
+        if !decided.isEmpty {
+            let successes = decided.filter { $0.outcome == .success || $0.outcome == .partial }.count
+            decisionSuccessRate = Double(successes) / Double(decided.count)
+        }
+
+        // Avg satisfaction
+        let scored = history.filter { $0.satisfactionScore > 0 }
+        if !scored.isEmpty {
+            avgSatisfaction = Double(scored.map { $0.satisfactionScore }.reduce(0, +)) / Double(scored.count)
+        }
+    }
+
+    func recalculatedsadsad(scenarios: [Scenario], history: [DecisionRecord]) {
+        // Category breakdown
+        var breakdown: [ScenarioCategory: Int] = [:]
+        for s in scenarios {
+            breakdown[s.category, default: 0] += 1
+        }
+        categoryBreakdown = breakdown
+
+        // Success rate
+        let decided = history.filter { $0.outcome != .pending }
+        if !decided.isEmpty {
+            let successes = decided.filter { $0.outcome == .success || $0.outcome == .partial }.count
+            decisionSuccessRate = Double(successes) / Double(decided.count)
+        }
         if !decided.isEmpty {
             let successes = decided.filter { $0.outcome == .success || $0.outcome == .partial }.count
             decisionSuccessRate = Double(successes) / Double(decided.count)
